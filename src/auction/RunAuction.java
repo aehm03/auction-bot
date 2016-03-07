@@ -50,7 +50,7 @@ public class RunAuction {
             String winner;
 
             while (quantity > 0) {
-
+                
                 // let bidders bid
                 bid1 = bidder1.placeBid();
                 bid2 = bidder2.placeBid();
@@ -62,7 +62,12 @@ public class RunAuction {
                 // update spent
                 bidder1Spent += bid1;
                 bidder2Spent += bid1;
-
+                
+                // abort auction if both players are out of money
+                if (bidder1Spent == 100 && bidder2Spent == 100) {
+                    break;
+                }
+                
                 // distribute
                 if (bid1 == bid2) {
                     bidder1Quant += qPerAuction / 2;
