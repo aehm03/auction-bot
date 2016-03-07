@@ -69,7 +69,9 @@ public class RunAuction {
                 }
                 
                 // distribute
-                if (bid1 == bid2) {
+                if (bid1 == 0 && bid2 == 0 ){
+                    //both players may bid 0. go to next round of auction.
+                } else if (bid1 == bid2) {
                     bidder1Quant += qPerAuction / 2;
                     bidder2Quant += qPerAuction / 2;
 
